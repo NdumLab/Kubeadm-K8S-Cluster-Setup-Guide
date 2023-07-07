@@ -73,6 +73,7 @@ sudo apt-get update -y
 sudo apt-get install containerd.io -y
 sudo systemctl enable containerd
 sudo systemctl restart containerd
+sudo systemctl status containerd
 ```
 **TASK 9: Configure containerd to use `Cgroup**
 - Use your favorite file editor to open `config.toml` file.
