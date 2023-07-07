@@ -53,16 +53,6 @@ sudo apt-get install containerd.io -y
 sudo systemctl enable containerd
 sudo systemctl restart containerd
 
-# **TASK 9: Configure containerd to use `Cgroup**
-
-# [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
-#   [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
-#     SystemdCgroup = true
-
-# save it and restart `containerd` by running
-# sudo systemctl restart containerd
-
-
 echo "TASK 10: Download the Google Cloud public signing key"
 sudo curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
 echo "[ TASK 3] Add Kubernetes apt repo"
@@ -72,3 +62,15 @@ echo "TASK 11:  Installing `kubeadm`, `Kubelete`, and `kubectl"
 sudo apt-get update -y
 sudo apt -y install kubelet=1.25.3-00 kubeadm=1.25.3-00 kubectl=1.25.3-00
 sudo apt-mark hold kubelet kubeadm kubectl 
+
+
+echo "TASK 9: Configure containerd to use `Cgroup"
+
+# [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+#   [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+#     SystemdCgroup = true
+
+# save it and restart `containerd` by running
+# sudo systemctl restart containerd
+
+
