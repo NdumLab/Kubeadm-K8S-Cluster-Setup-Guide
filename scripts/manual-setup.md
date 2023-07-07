@@ -30,7 +30,7 @@ lsmod | grep overlay
 
 ```
 
-**TASK 3: Update Packages and cert., curl and gnupg Utilities**
+**TASK 3: Update Packages and install cert, curl and gnupg Utilities**
 
 ```bash
 sudo apt-get update -y
