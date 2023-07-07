@@ -114,7 +114,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 - To initialize a cluster, run
 
 ```bash
-$IP=YOUR_MASTER IP
+IP=YOUR_MASTER IP
 sudo kubeadm init --apiserver-advertise-address=$IP
 ```
 Wait till initialization process is completed on the `control-plane` or `master` node.
