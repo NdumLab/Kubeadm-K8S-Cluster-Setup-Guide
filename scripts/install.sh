@@ -58,13 +58,13 @@ sudo curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg
 echo "[ TASK 3] Add Kubernetes apt repo"
 echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
-echo "TASK 11:  Installing `kubeadm`, `Kubelete`, and `kubectl"
+echo "TASK 11:  Installing kubeadm`, Kubelet, and kubectl"
 sudo apt-get update -y
 sudo apt -y install kubelet=1.25.3-00 kubeadm=1.25.3-00 kubectl=1.25.3-00
 sudo apt-mark hold kubelet kubeadm kubectl 
 
 
-echo "TASK 9: Configure containerd to use `Cgroup"
+echo "TASK 9: Configure containerd to use Cgroup"
 
 # [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
 #   [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
