@@ -50,6 +50,13 @@ echo \
 echo "TASK 8: Update the apt packages and Install containerd"
 sudo apt-get update -y
 sudo apt-get install containerd.io -y
+
+sudo cat <<EOF | sudo tee /etc/containerd/config.toml
+  [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+    [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+       SystemdCgroup = true
+EOF
+
 sudo systemctl enable containerd
 sudo systemctl restart containerd
 
