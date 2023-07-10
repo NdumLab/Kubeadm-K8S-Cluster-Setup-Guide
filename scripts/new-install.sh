@@ -71,7 +71,7 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 
-###Install k8s binaeries
+###Install k8s binaries
 sudo apt-get update -y
 sudo apt -y install kubelet=1.25.3-00 kubeadm=1.25.3-00 kubectl=1.25.3-00
 sudo apt-mark hold kubelet kubeadm kubectl 
